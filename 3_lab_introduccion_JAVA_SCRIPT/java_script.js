@@ -35,3 +35,44 @@ console.log("Hola " + nombre);
 let is_hungry = confirm("Tienes hambre?");
 
 console.log(is_hungry);
+
+
+//funciones tradicionales
+
+function numero_tacos(){
+    return 5;
+}
+
+console.log(numero_tacos());
+
+
+//funciones modernas / anonimas / flecha / arrow function
+
+let cantidad_tacos = () => {return 5;}
+
+console.log(cantidad_tacos());
+
+let boton = document.getElementById("buenos dias");
+boton.innerHTML = "Buenos dias!";
+boton.onclick = () => alert("Buenos diaaas");
+
+
+
+//arreglos
+const arreglo = ["Elemento"];
+arreglo.push("Otro elemento");
+arreglo["dos"] = 2;
+arreglo.length = 10;
+arreglo[20] = "Fin del arreglo";
+
+console.log(arreglo);
+
+for (let elemento in arreglo) {
+    console.log(elemento);
+}
+
+for (let valor of arreglo) {
+    console.log(valor);
+}
+
+//
