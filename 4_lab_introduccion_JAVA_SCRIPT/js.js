@@ -55,8 +55,21 @@ let boton_3 = document.getElementById("boton_3");
 boton_3.innerHTML = "Click para iniciar ejercicio 2";
 boton_3.onclick = () => {
     let texto = document.getElementById("resultado2");
+    let tiempo = document.getElementById("tiempo");
     let num1 = Math.floor(Math.random() * 100);
     let num2 = Math.floor(Math.random() * 100);
-    let resultado = prompt("Ingrese resultado");
-
+    let resultado = "";
+    let tiempo_1 = Date.now();
+    resultado = prompt("Ingrese resultado de " + 
+        num1 +" + "+ num2);
+    let tiempo_2 = Date.now();
+    let tiempo_3 = (tiempo_12 - tiempo_)/1000;
+    if((num1 + num2) != resultado){
+        texto.innerHTML = "Respuesta incorrecta, la respuesta correcta es "
+            + (num1 + num2); 
+    } else if((num1+num2)== resultado){
+        TextDecoder.innerHTML = "Respuesta correcta";
+    }
+    tiempo.innerHTML = "Te tardaste " + tiempo_3 + 
+        " segundos en responder";
 }
