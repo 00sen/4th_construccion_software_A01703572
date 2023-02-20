@@ -194,3 +194,55 @@ boton_6.onclick = () => {
 
 
 //ejercicio 6 -----------------------------------------------------------------
+
+let boton_7 = document.getElementById("boton_7");
+let texto_problema = document.getElementById("problema_original");
+boton_7.innerHTML = "Click para iniciar ejercicio 6";
+let resultado6 = document.getElementById("resultado6");
+
+class Numero {
+    constructor(valor){
+        this.valor = valor;
+    }
+
+    getValor(){
+        return this.valor;
+    }
+
+    EsPrimo(){
+        if(this.valor == 0 || this.valor == 1 || this.valor == 4) return false;
+        for(let i = 2; i < this.valor / 2; i++){
+            if(this.valor % i == 0)return false;
+        }
+        return true;
+    }
+}
+
+
+boton_7.onclick = () => {
+    texto_problema.innerHTML = "Saber si un numero es primo o no.";
+    let texto_de_boton_8 = document.getElementById("texto_de_boton_8");
+    texto_de_boton_8.innerHTML = "<button id='boton_8'></button><div>"
+    let boton_8 = document.getElementById("boton_8");
+    boton_8.innerHTML = "Ingresar numero";
+    boton_8.onclick = () => {
+        let num = 0;
+        let texto_numero = "Ingrese numero";
+        while(num <= 0){
+            num = prompt(texto_numero);
+            texto_numero = "Numero debe ser mayor a 0";
+        }
+
+        const num1 = new Numero(num);
+        let comprobador = "";
+        if(num1.EsPrimo() == false){
+            comprobador = " NO es primo.";
+        } else{
+            comprobador = " SI es primo."
+        }
+        resultado6.innerHTML = "El numero " + num1.getValor() 
+        + comprobador;
+        
+        
+    }
+}
