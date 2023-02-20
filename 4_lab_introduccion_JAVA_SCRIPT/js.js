@@ -171,5 +171,26 @@ boton_5.onclick = () => {
 
 let boton_6 = document.getElementById("boton_6");
 boton_6.innerHTML = "Click para iniciar ejericio 5";
+let resultado5 = document.getElementById("resultado5");
 
-function Inverso(){}
+function Inverso(num){
+    const arreglo_numero = num.toString().split("").reverse().join("");
+    return Number(arreglo_numero);
+}
+
+boton_6.onclick = () => {
+    let numero_a_invertir = -1;
+    let texto_para_invertir = "Ingrese numero a invertir";
+
+    while(numero_a_invertir < 0 ){
+        numero_a_invertir = prompt(texto_para_invertir);
+        texto_para_invertir = "Numero tiene que ser igual o mayor a 0";
+    }
+
+    let numero_invertido = Inverso(numero_a_invertir);
+    resultado5.innerHTML = "Numero original: " + numero_a_invertir 
+    + "<br>" + "Numero invertido: " + numero_invertido;
+}
+
+
+//ejercicio 6 -----------------------------------------------------------------
