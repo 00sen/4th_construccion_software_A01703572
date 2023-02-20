@@ -124,3 +124,47 @@ boton_4.onclick = () => {
 //ejercicio 4 -----------------------------------------------------
 
 let boton_5 = document.getElementById("boton_5");
+boton_5.innerHTML = "Click para iniciar ejercicio 4";
+let resultado4 = document.getElementById("resultado4");
+
+function Promedios(arreglo_de_arreglos){
+    const arreglo_promedios = [];
+    let suma = 0;
+    for(let i = 0; i < arreglo_de_arreglos.length; i++){
+
+        suma = 0;
+        for(let f = 0; f < arreglo_de_arreglos[i].length; f++){
+            suma = suma + arreglo_de_arreglos[i][f];
+        }
+        arreglo_promedios[i] = suma / arreglo_de_arreglos[i].length;
+    }
+    return arreglo_promedios;
+}
+
+boton_5.onclick = () => {
+
+    const arreglo = [];
+    let cantidad = prompt("Ingrese cantidad de arreglos");
+
+    let lista_arreglos_temporal = "";
+    let lista_arreglos = document.getElementById("lista_arreglos");
+    lista_arreglos.innerHTML = "Arreglos por usar: (numeros aleatorios):<br>";
+    
+    for(let i = 0; i < cantidad; i++){
+        const arreglo_2 = [];
+        let longitud = Math.floor(Math.random() * 5) +1;
+        for(let f = 0; f < longitud; f++){
+            arreglo_2[f] = Math.floor(Math.random() * 50);
+        }
+        arreglo[i] = arreglo_2;
+        lista_arreglos_temporal = lista_arreglos_temporal
+         + arreglo_2 + "<br>";
+    }
+    
+    lista_arreglos.innerHTML = lista_arreglos.innerHTML
+     + lista_arreglos_temporal;
+
+    resultado4.innerHTML = "Promedios:<br>" + Promedios(arreglo);
+}
+
+
