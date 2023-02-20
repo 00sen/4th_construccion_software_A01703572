@@ -73,3 +73,54 @@ boton_3.onclick = () => {
     tiempo.innerHTML = "Te tardaste " + tiempo_3 + 
         " segundos en responder";
 }
+
+
+//ejercicio 3 --------------------------------------------------------
+let boton_4 = document.getElementById("boton_4");
+boton_4.innerHTML = "Click para iniciar ejercicio 3";
+
+function ingresar_numeros(){
+
+    let cantidad = 0;
+    let texto = "Ingrese cantidad de numeros deseada";
+    while(cantidad <= 0){
+        cantidad = prompt(texto);
+        if(cantidad <= 0){
+            texto = "Cantidad debe ser mayor a 0";
+        }
+    }
+
+    let num = 0;
+    const arreglo_temporal = [];
+    for(let i = 0; i<cantidad; i++){
+        num = prompt("Ingrese numero " + (i+1));
+        arreglo_temporal[i] = num;
+    }
+    return arreglo_temporal;
+}
+
+function contador(numeros){
+    const contadores = [0,0,0];
+    for(let i = 0; i <= numeros.length; i++){
+        if(numeros[i] < 0){
+            contadores[0] += 1;
+        } else if(numeros[i] == 0){
+            contadores[1] += 1;
+        } else if(numeros[i] > 0){
+            contadores[2] += 1;
+        }
+    }
+    return contadores;
+}
+
+boton_4.onclick = () => {
+    const arreglo = contador(ingresar_numeros());
+    let texto = document.getElementById("resultado3");
+    texto.innerHTML = "La cantidad de numeros negativos es: " + 
+    arreglo[0] + "<br>La cantidad de ceros es: " + arreglo[1] +
+    "<br>La cantidad de numeros positivos es: " + arreglo[2];
+}
+
+//ejercicio 4 -----------------------------------------------------
+
+let boton_5 = document.getElementById("boton_5");
