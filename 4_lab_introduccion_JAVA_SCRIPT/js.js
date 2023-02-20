@@ -99,7 +99,7 @@ function ingresar_numeros(){
     return arreglo_temporal;
 }
 
-function contador(numeros){
+function Contador(numeros){
     const contadores = [0,0,0];
     for(let i = 0; i <= numeros.length; i++){
         if(numeros[i] < 0){
@@ -114,7 +114,7 @@ function contador(numeros){
 }
 
 boton_4.onclick = () => {
-    const arreglo = contador(ingresar_numeros());
+    const arreglo = Contador(ingresar_numeros());
     let texto = document.getElementById("resultado3");
     texto.innerHTML = "La cantidad de numeros negativos es: " + 
     arreglo[0] + "<br>La cantidad de ceros es: " + arreglo[1] +
@@ -167,4 +167,9 @@ boton_5.onclick = () => {
     resultado4.innerHTML = "Promedios:<br>" + Promedios(arreglo);
 }
 
+//ejercicio 5 -------------------------------------------------------------------
 
+let boton_6 = document.getElementById("boton_6");
+boton_6.innerHTML = "Click para iniciar ejericio 5";
+
+function Inverso(){}
