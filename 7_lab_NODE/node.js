@@ -61,28 +61,32 @@ let resultado3 = "El numero " + num
 + comprobador;
 
 
-fileSystem.readFile("./NODE.html", 'utf-8', function (err, htmlData){
-
     const server = http.createServer( (request, response) => {
         console.log(request.url);
-        response.setHeader('Content-Type', 'text/html');
-        response.write(intro);
-        response.write(primer_texto);
-        response.write(promedio_texto + "<br><br>");
-        response.write("Texto para escribir en el archivo 'texto.txt' : <br><br>");
-        response.write(string_para_archivo);
-        response.write("<br><br> El problema opcional es saber<br>si un numero es primo o no.");
-        response.write("<br><br>Numero prueba aleatorio: "+ num + "<br><br>");
-        response.write(resultado3+"<br><br>");
-        response.write("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        response.write("<br><br><br> Pagina Web");
-        response.write(htmlData);
-    
-    
-        response.end();
+
+        if(request.url === "/") {
+            response.setHeader('Content-Type', 'text/html');
+            response.write(intro);
+            response.write(primer_texto);
+            response.write(promedio_texto + "<br><br>");
+            return response.end();
+        } else if (request.url === "/ejercicio2" && request.method == "GET") {
+            response.write("Texto para escribir en el archivo 'texto.txt' : <br><br>");
+            response.write(string_para_archivo);
+            return response.end();
+        } else if (request.url === "/ejercicio3" && request.method == ) {
+            response.write("<br><br> El problema opcional es saber<br>si un numero es primo o no.");
+            response.write("<br><br>Numero prueba aleatorio: "+ num + "<br><br>");
+            response.write(resultado3+"<br><br>");
+            return response.end();
+        } else {
+            response.statusCode = 404;
+            response.write("No encontramos la pagina que busca :c");
+            response.end();
+        }
     });
     
     server.listen(3000);
 
-});
+
 
