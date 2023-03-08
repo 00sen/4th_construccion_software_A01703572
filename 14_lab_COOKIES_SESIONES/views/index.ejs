@@ -1,0 +1,76 @@
+<!--Primer test html-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <%- include('includes/head.html') %>
+
+        
+    </head>
+    <body class="container">
+        <h1>HTML DINAMICO</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <%- include('includes/datos.html') %>
+                    
+                </div>
+                <div class ="col"></div>
+                <div class="col">
+                    <IMG SRC="media/logo_tec.png"
+                    width="400"
+                    height="100" />
+                    
+                </div>
+            </div>
+
+        </div>
+        
+        
+        <%- include('includes/audio_gif.html') %>
+
+
+        <%- include('includes/ascii.html') %>
+
+<button type="button" class="btn btn-primary" id="boton_texto"></button>
+<br><br><br>
+
+<%- include('includes/guia_rutas.html') %>
+
+<h2>Preguntas</h2><br><br>
+<div>
+
+Que beneficios encuentras en el estilo MVC?<br>
+- Simplifica tu proyecto y provee una facil <br>
+organizacion. Ayuda a la escalabilidad del proyecto ya que lo<br>
+fragmenta muy bien.<br><br>
+
+Encuentras alguna desventaja en el estilo arquitectonico MVC?<br>
+- Puede llegar a ser algo confuso en la aplicacion del mismo.<br>
+Quizas complique un poco hacer los diagramas ya que tienes que <br>
+conectar mas documentos y partes del diagrama con otras.<br><br>
+
+
+
+</div>
+
+
+
+
+                    </div>
+
+        
+                    <%- include('includes/nian_cat.html') %>
+
+        <script src="/js/js.js"></script>
+        <footer>
+        
+            <%- include('includes/footer.html') %>
+            
+        </footer>
+    </body>
+    
+</html> 
