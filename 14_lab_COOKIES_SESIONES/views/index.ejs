@@ -1,44 +1,23 @@
 <!--Primer test html-->
 
-<!DOCTYPE html>
+<%- include('includes/head.ejs') %>
 
-<html>
-    <head>
 
-        <%- include('includes/head.html') %>
-
-        
-    </head>
     <body class="container">
-        <h1>HTML DINAMICO</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-
-                    <%- include('includes/datos.html') %>
-                    
-                </div>
-                <div class ="col"></div>
-                <div class="col">
-                    <IMG SRC="media/logo_tec.png"
-                    width="400"
-                    height="100" />
-                    
-                </div>
-            </div>
-
-        </div>
+        <h1>COOKIES Y SESIONES</h1>
+        
+        <%- include('includes/logo.ejs') %>
         
         
-        <%- include('includes/audio_gif.html') %>
+        <%- include('includes/audio_gif.ejs') %>
 
 
-        <%- include('includes/ascii.html') %>
+        <%- include('includes/ascii.ejs') %>
 
 <button type="button" class="btn btn-primary" id="boton_texto"></button>
 <br><br><br>
-
-<%- include('includes/guia_rutas.html') %>
+<button type="button" class="btn btn-dark" id = "boton_genshin"></button>
+<%- include('includes/guia_rutas.ejs') %>
 
 <h2>Preguntas</h2><br><br>
 <div>
@@ -63,14 +42,12 @@ conectar mas documentos y partes del diagrama con otras.<br><br>
                     </div>
 
         
-                    <%- include('includes/nian_cat.html') %>
+                    <%- include('includes/nian_cat.ejs') %>
 
         <script src="/js/js.js"></script>
-        <footer>
-        
-            <%- include('includes/footer.html') %>
-            
-        </footer>
+               
+            <%- include('includes/footer.ejs') %>
+    
     </body>
     
 </html> 

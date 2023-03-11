@@ -10,6 +10,4 @@ router.post('/prueba1', routes.postPrueba1);
 
 router.get('/prueba2', routes.getPrueba2);
 
-
-
 module.exports = router;

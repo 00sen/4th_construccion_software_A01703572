@@ -29,21 +29,11 @@ boton_texto.onclick = () => {
     }    
 }
 
-//comprobar contrasenias ---------------------------------------------
+//boton para redirigir a lista
 
-let boton_contrasenia = document.getElementById("boton_password");
-boton_contrasenia.innerHTML = "Click para comprobar";
+let boton_genshin = document.getElementById("boton_genshin");
+boton_genshin.innerHTML = "Click para ir a lista de personajes";
 
-boton_contrasenia.onclick = () => {
-    let input1 = document.getElementById("psw1");
-    let input2 = document.getElementById("psw2");
-    console.log(input1.value);
-    console.log(input2.value);
-    if(input1.value != input2.value){
-        alert("contrasenias no son iguales");
-    } else {
-        alert("contrasenia valida");
-    }
+boton_genshin.onclick = () => {
+    location.href = 'lista/lista';
 }
-
-
