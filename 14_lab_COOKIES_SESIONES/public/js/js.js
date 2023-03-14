@@ -35,5 +35,6 @@ let boton_genshin = document.getElementById("boton_genshin");
 boton_genshin.innerHTML = "Click para ir a lista de personajes";
 
 boton_genshin.onclick = () => {
-    location.href = 'lista/lista';
+    location.href = 'lista';
 }
+

@@ -1,5 +1,10 @@
 const Personaje = require('../models/genshin.model');
+const Arma = require('../models/arma.model');
 
+
+/* Aqui controlo la pagina de lista, donde 
+imprimo en pantalla todos los personajes que tengo en 
+la base de datos */
 exports.getLista = (request, response, next) => {
     const cookies = request.get('Cookie') || '';
     let consultas = cookies.split('=')[1] || 0;
@@ -13,7 +18,7 @@ exports.getLista = (request, response, next) => {
     .then(([rows, fieldData]) => {
         console.log(rows);
 
-        response.render('../views/lista', {
+        response.render('lista', {
             personajes: rows,
             ultimo_personaje: request.session.ultimo_personaje || '',
         });
@@ -23,5 +28,34 @@ exports.getLista = (request, response, next) => {
     });
 };
 
-exports.post
+/* Aqui es donde controlo el post de la pagina de arriba,
+donde el usuario puede ingresar un nuevo presonaje a la base
+de datos*/ 
+
+
+exports.getNuevo = (request, response, next) => {
+    response.render('nuevo');
+}
+
+exports.postNuevo = (request, response, next) => {
+
+    const personaje = new Personaje({
+        nombre: request.body.nombre,
+        elemento: request.body.elemento,
+        imagen: request.body.url,
+    });
+
+    personaje.save()
+    .then(([rows, fieldData]) => {
+        request.session.ultimo_personaje = personaje.nombre;
+        response.redirect('/lista')
+    })
+    .catch((error) => {console.log(error)});
+};
+
+
+
+
+
+
 

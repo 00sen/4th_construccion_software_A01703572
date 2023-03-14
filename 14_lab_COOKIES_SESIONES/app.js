@@ -28,7 +28,10 @@ const rutas2 = require('./routes/2.routes.js');
 app.use('/routes2', rutas2);
 
 const lista = require('./routes/lista.routes.js');
-app.use('/lista', lista);
+app.use('/', lista);
+
+const signup = require('./routes/sesion.routes.js');
+app.use('/', signup);
 
 
 

@@ -1,0 +1,34 @@
+<%- include('includes/head.ejs') %>
+<body class="p-3 mb-2 bg-primary-subtle text-emphasis-primary">
+    <div class="text-center">
+        <h1 class="display-3">Agrega un nuevo personaje</h1>
+
+        <form action="/nuevo" method="POST">
+            <div class="container">
+                <div class="input-group mb-3">
+                    <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Elemento</label>
+                    <select class="form-select" name="elemento" id="elemento">
+                        <option selected>Opciones</option>
+                        <option value="Anemo">Anemo</option>
+                        <option value="Geo">Geo</option>
+                        <option value="Electro">Electro</option>
+                        <option value="Dendro">Dendro</option>
+                        <option value="Hydro">Hydro</option>
+                        <option value="Pyro">Pyro</option>
+                        <option value="Cryo">Cryo</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="imagen" id="imagen" class="form-control" placeholder="Url de imagen" aria-label="Url de imagen" aria-describedby="basic-addon1">
+                </div>
+                <input class="btn btn-outline-primary" type="submit" value="Registrar">
+            </div>
+        </form>
+    </div>
+</body>
+
+
+

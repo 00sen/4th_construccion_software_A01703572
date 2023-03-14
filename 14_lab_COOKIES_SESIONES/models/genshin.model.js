@@ -5,7 +5,7 @@ module.exports = class Personaje {
     constructor(personaje){
     this.nombre = personaje.nombre;
     this.elemento = personaje.elemento;
-    this.imagen = personaje.imagen;
+    this.imagen = personaje.imagen || '/media/placeholder.png';
     }
 
     save() {
