@@ -1,0 +1,27 @@
+<%- include('includes/head.ejs') %>
+
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Inicia sesion</h1>
+    </div>
+
+    <% if(mensaje != '') { %>
+        <div class="toast" role="alert" aeria-live="assertive" aria-atomic="true">
+            <%= mensaje %>
+        </div>
+    <% } %>
+
+    <form action="/login" method="POST">
+        <div class="container">
+            <div class="input-group mb-3">
+                <input name="username" id="username" class="input-group-text" type="text" placeholder="Username">
+            </div>
+            <div class="input-group mb-3">
+                <input name="password" id="password" class="input-group-text" type="password" placeholder="Password">
+            </div>
+            <div class="text-center">
+                <input class="btn btn-outline-primary" type="submit" value="Login">
+            </div>
+        </div>
+    </form>
+</body>

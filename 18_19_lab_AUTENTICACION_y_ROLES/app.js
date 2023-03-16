@@ -30,11 +30,8 @@ app.use('/routes2', rutas2);
 const lista = require('./routes/lista.routes.js');
 app.use('/', lista);
 
-const signup = require('./routes/sesion.routes.js');
-app.use('/', signup);
-
-
-
+const login = require('./routes/sesion.routes.js');
+app.use('/', login);
 
 
 //intro
