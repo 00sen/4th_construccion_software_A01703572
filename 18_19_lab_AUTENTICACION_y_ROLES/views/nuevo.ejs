@@ -4,6 +4,8 @@
         <h1 class="display-3">Agrega un nuevo personaje</h1>
 
         <form action="/nuevo" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken%>"
+
             <div class="container">
                 <div class="input-group mb-3">
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">

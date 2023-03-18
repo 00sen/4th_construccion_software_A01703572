@@ -27,9 +27,12 @@ module.exports = class Usuario {
         `, [username]);
     }
 
-    // static fetchPrivilegios(username) {
-    //     return db.execute(`
-    //     SELECT p.nombre
-    //     FROM Usuarios u, Usuario_rol ur, Roles r, rol`)
-    // }
+    static fetchPrivilegios(username) {
+        return db.execute(`
+        SELECT p.nombre
+        FROM Usuarios u, Usuario_rol ur, Roles r, Rol_privilegio rp, Privilegios p
+        WHERE u.id = ur.idUsuario AND ur.idRol = r.id AND rp.idRol = r.id
+            AND rp.idPrivilegio = p.id AND u.username = ?
+        `, [username]);
+    }
 }

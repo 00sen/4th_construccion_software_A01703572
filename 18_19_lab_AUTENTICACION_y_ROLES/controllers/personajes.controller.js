@@ -21,6 +21,9 @@ exports.getLista = (request, response, next) => {
         response.render('lista', {
             personajes: rows,
             ultimo_personaje: request.session.ultimo_personaje || '',
+            isLoggedIn: request.session.isLoggedIn || false,
+            nombre: request.session.nombre || '',
+            privilegios: request.session.privilegios || [],
         });
     })
     .catch(error => {

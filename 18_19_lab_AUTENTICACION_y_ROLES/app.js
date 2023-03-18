@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const session = require('express-session');
+const csrf = require('csurf');
+const isAuth = require('./util/is-auth');
 
 //Constructor de express
 const app = express();
@@ -20,6 +22,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+
+
+//proteccion CSRF
+const csrfProtection = csrf();
+app.use(csrfProtection);
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
+
 
 const rutas1 = require('./routes/routes.js');
 app.use('/routes', rutas1);
