@@ -6,6 +6,7 @@
 
 
     <form action="/signup" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <div class="container">
             <div class="input-group mb-3">
                 <input required name="nombre" id="nombre" class="form-control" type="text" placeholder="Name" aria-label="Nombre" aria-describedby="basic-addon1">
