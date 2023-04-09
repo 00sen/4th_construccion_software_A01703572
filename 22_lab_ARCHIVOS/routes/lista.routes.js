@@ -10,6 +10,7 @@ router.get('/nuevo', lista.getNuevo)
 
 router.post('/nuevo', lista.postNuevo);
 
+router.post('/archivo', lista.postArchivo);
 
 
 module.exports = router;

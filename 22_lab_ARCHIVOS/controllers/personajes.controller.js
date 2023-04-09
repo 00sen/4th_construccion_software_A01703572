@@ -16,7 +16,6 @@ exports.getLista = (request, response, next) => {
 
     Personaje.fetch(id)
     .then(([rows, fieldData]) => {
-        console.log(rows);
 
         response.render('lista', {
             personajes: rows,
@@ -56,6 +55,10 @@ exports.postNuevo = (request, response, next) => {
     .catch((error) => {console.log(error)});
 };
 
+
+exports.postArchivo = (request, response, next) => {
+    response.redirect('/index')
+}
 
 
 
