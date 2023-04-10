@@ -57,7 +57,7 @@ exports.postNuevo = (request, response, next) => {
 
 
 exports.postArchivo = (request, response, next) => {
-    response.redirect('/index')
+    response.redirect('/')
 }
 
 
