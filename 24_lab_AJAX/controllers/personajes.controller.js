@@ -60,5 +60,13 @@ exports.postArchivo = (request, response, next) => {
     response.redirect('/')
 }
 
+exports.getAjax = (request, response, next) => {
+
+    response.status(200).json({message: "Respuesta asincrona"});
+};
+
+
+
+
 
 

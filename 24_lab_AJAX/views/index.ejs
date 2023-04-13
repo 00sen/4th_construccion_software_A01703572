@@ -1,0 +1,42 @@
+<!--Primer test html-->
+
+<%- include('includes/head.ejs') %>
+
+    <body class="container">
+        <h1>COOKIES Y SESIONES</h1>
+        
+        <%- include('includes/logo.ejs') %>
+        
+        
+        <%- include('includes/audio_gif.ejs') %>
+
+
+        <%- include('includes/ascii.ejs') %>
+
+<button type="button" class="btn btn-primary" id="boton_texto"></button>
+<br><br><br>
+<button type="button" class="btn btn-dark" id = "boton_genshin"></button>
+<%- include('includes/guia_rutas.ejs') %>
+
+<form action="archivo" method="POST"  enctype="multipart/form-data"> 
+
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
+    <input type="file" name="archivo">
+    <input type="submit" name="enviar" value="subir">
+
+
+</form>
+
+                    </div>
+
+        
+                    <%- include('includes/nian_cat.ejs') %>
+
+        <script src="/js/js.js"></script>
+               
+            <%- include('includes/footer.ejs') %>
+    
+    </body>
+    
+</html> 
